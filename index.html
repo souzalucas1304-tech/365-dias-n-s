@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -139,6 +140,17 @@
             </div>
         </div>
     </div>
+    <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    });
+
+    document.querySelectorAll('.content').forEach((el) => observer.observe(el));
+</script>
 
     <section class="spotify-section">
         <h3>Nossa Trilha Sonora</h3>
